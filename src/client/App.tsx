@@ -17,6 +17,7 @@ class App extends React.Component<any> {
     this.props.fetchPhotos('barcelona', 10, 1);
   }
   public render() {
+    console.log(this.props.images)
     return (
       <div className="App">
         <header className="App-header">
@@ -25,7 +26,11 @@ class App extends React.Component<any> {
         <main>
           {this.props.images.photos.length 
             ? this.props.images.photos.map((photo: IPhoto, index: number) => {
-              return (<p key={index}>{photo.title}</p>)
+              return (
+              <div key={index}>
+                <img src={photo.url} />
+                <p>{photo.title}-{photo.owner}</p>
+              </div>)
             })
           : <p>...Loading</p> }
         </main>

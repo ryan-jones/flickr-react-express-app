@@ -1,6 +1,7 @@
 
 module.exports = {
-  formatPhotoResponse
+  formatPhotoResponse,
+  formatPhoto
 }
 
 function formatPhotoResponse(response) {
@@ -16,15 +17,11 @@ function formatPhotoResponse(response) {
 }
 
 function formatPhoto(photo) {
-  const { owner, secret, server, farm, title, ispublic, isfamily, isfriend } = photo;
-  return {
+  const { owner, secret, server, farm, title, id } = photo;  
+  const result = {
     owner,
-    secret,
-    server,
-    farm,
     title,
-    isPublic: ispublic,
-    isFamily: isfamily,
-    isFriend: isfriend
-  }
+    url: `http://farm${farm}.static.flickr.com/${server}/${id}_${secret}.jpg`
+  };
+  return result;
 }

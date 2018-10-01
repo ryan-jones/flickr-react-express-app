@@ -1,12 +1,7 @@
 export interface IPhoto {
-  farm: number;
-  isFamily: number;
-  isFriend: number;
-  isPublic: number;
   owner: string;
-  secret: string;
-  server: string;
   title: string;
+  url: string;
 }
 
 export interface ImagesData {

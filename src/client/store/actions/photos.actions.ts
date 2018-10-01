@@ -9,6 +9,7 @@ export const fetchPhotos = (tags: string, perPage: number = 10, page: number = 1
 
   return axios.get(`http://localhost:8080/api/photos?tags=${tags}&perPage=${perPage}&page=${page}`)
     .then((res: AxiosResponse<IPhotoResponse>) => {
+      console.log('res', res);
       dispatch(createAction(actionTypes.PHOTOS_FETCHED, res.data));
       dispatch(createAction(actionTypes.LOADED));
     })
