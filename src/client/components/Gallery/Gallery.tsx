@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { IPhoto } from '../../interfaces/photos.interface';
 import Image from '../Gallery/Image/Image.container';
-import { IGalleryProps } from './Gallery.interfaces';
+import { IGalleryProps, IPhoto } from './Gallery.interfaces';
 import './Gallery.scss';
 
 export default class Gallery extends React.Component<IGalleryProps> {

@@ -1,5 +1,4 @@
-import { IPhoto } from '../../../interfaces/photos.interface';
-import { IUser } from '../Gallery.interfaces';
+import { IUser, IPhoto } from '../Gallery.interfaces';
 
 export interface IPhotoDispatchProps {
   fetchUser: (id: string) => void;

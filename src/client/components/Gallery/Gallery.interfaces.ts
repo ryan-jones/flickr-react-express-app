@@ -1,5 +1,3 @@
-import { ImagesData } from "../../interfaces/photos.interface";
-
 export interface IGalleryState {
   images: ImagesData;
   loading: boolean;
@@ -28,4 +26,27 @@ export interface IUser {
   realName: string;
   userName: string;
   profileUrl: string;
+}
+
+export interface IPhoto {
+  owner: string;
+  title: string;
+  url: string;
+}
+
+export interface ImagesData {
+  page: number;
+  perPage: number;
+  pages: number;
+  total: string;
+  photos: IPhoto[];
+}
+
+export interface IPhotoResponse {
+  config: object;
+  header: object;
+  status: number;
+  statusText: string;
+  request: any;
+  data: ImagesData
 }

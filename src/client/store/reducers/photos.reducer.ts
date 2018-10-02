@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
-import { ImagesData } from '../../interfaces/photos.interface';
+import { ImagesData } from '../../components/Gallery/Gallery.interfaces';
 
 interface IState extends ImagesData {}
 
@@ -10,7 +10,6 @@ const InitialState: IState = {
   total: '',
   page: 1
 }
-
 
 const photoReducer = (state = InitialState, action: any) => {
   switch(action.type) {

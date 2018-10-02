@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import createAction from './create-action';
 import * as actionTypes from './actionTypes';
-import { IPhotoResponse } from '../../interfaces/photos.interface';
+import { IPhotoResponse } from '../../components/Gallery/Gallery.interfaces';
 
 export const fetchPhotos = (tags: string, perPage: number = 10, page: number = 1) => (dispatch: any) => {
   dispatch(createAction(actionTypes.FETCHING_PHOTOS));
