@@ -1,0 +1,17 @@
+@import '../../../../styles/global.scss';
+
+.top-header {
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom: $header-border-bottom;
+  background-color: $white;
+  color: black;
+  padding: 0 15px;
+
+  .centered-layout {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}

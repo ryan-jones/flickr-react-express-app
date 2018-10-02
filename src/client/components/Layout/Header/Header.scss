@@ -1,0 +1,8 @@
+@import '../../../styles/global.scss';
+
+header {
+  border-bottom: $header-border-bottom;
+  background-color: $header-bg-color;
+  color: $white;
+  @include box-shadow(3px);
+}

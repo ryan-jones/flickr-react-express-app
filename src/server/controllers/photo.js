@@ -15,7 +15,6 @@ function getPhotos(req, res, next) {
   return axios.get(query)
     .then(response => {
       const formattedResponse = formatPhotoResponse(response.data);
-      console.log('formatted', formattedResponse);
       res.send(formattedResponse);
     })
     .catch(err => res.send({ err }))

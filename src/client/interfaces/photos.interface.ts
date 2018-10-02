@@ -20,3 +20,8 @@ export interface IPhotoResponse {
   request: any;
   data: ImagesData
 }
+
+export interface ImageProps {
+  photo: IPhoto,
+  index: number;
+}

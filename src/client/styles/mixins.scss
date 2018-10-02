@@ -1,0 +1,3 @@
+@mixin box-shadow($property) {
+  box-shadow: 0px $property 5px #ccc;
+}

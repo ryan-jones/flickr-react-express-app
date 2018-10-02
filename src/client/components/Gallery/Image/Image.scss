@@ -1,0 +1,21 @@
+@import '../../../styles/global.scss';
+
+.image-container {
+  width: 20%;
+  // border: 1px solid red;
+  margin: 1em 0;
+
+  .photo-box {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    box-sizing: border-box;
+    @include box-shadow(5px);
+    margin: auto;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
