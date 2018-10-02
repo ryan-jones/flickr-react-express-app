@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IPhoto } from '../../interfaces/photos.interface';
-import Image from '../Gallery/Image/Image';
+import Image from '../Gallery/Image/Image.container';
 import { IGalleryProps } from './Gallery.interfaces';
 import './Gallery.scss';
 
@@ -17,7 +17,7 @@ export default class Gallery extends React.Component<IGalleryProps> {
         {
           images.photos.length
             ? this.props.images.photos.map((photo: IPhoto, index: number) => {
-              return (<Image key={index} photo={photo} index={index} />)
+              return (<Image key={index} photo={photo} />)
             })
             : <p>...Loading</p>
         }

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state: IGalleryState): IGalleryStateProps => ({
   images: state.images,
-  loading: state.loading
+  loading: state.loading,
 });
 
 const mapDispatchToProps = (dispatch: any): IGalleryDispatchProps => ({

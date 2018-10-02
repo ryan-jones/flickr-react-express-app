@@ -4,3 +4,7 @@ export const PHOTOS_FETCH_ERROR = 'PHOTOS_FETCH_ERROR';
 
 export const IS_LOADING = 'IS_LOADING';
 export const LOADED = 'LOADED';
+
+export const FETCHING_USER = 'FETCHING_USER';
+export const USER_FETCH_SUCCESS = 'USER_FETCH_SUCCESS';
+export const USER_FETCH_FAILED = 'USER_FETCH_FAILED';
