@@ -1,7 +1,8 @@
 {
   "server": {
     "host": "localhost",
-    "port": 8080
+    "port": 8080,
+    "timeout": "10s"
   },
   "api": {
     "api_key": "077d1bcd65182507a0d6199a699767f9",

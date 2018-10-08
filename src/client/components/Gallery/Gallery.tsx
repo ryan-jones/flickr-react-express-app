@@ -1,21 +1,30 @@
 import * as React from 'react';
 import Image from '../Gallery/Image/Image.container';
 import { IGalleryProps, IPhoto } from './Gallery.interfaces';
-import './Gallery.scss';
+import Modal from './Modal/Modal';
+import Lightbox from './Lightbox/Lightbox';
 
 export default class Gallery extends React.Component<IGalleryProps> {
 
   public componentDidMount() {
-    this.props.fetchPhotos('dogs', 15, 1);
+    this.props.fetchPhotos('taichung', 12, 1);
+  }
+
+  public onCloseModal = () => {
+    this.props.closeModal();
   }
 
   public render() {
-    const { images } = this.props;
+    const { images, user, modalActive } = this.props;
+    console.log('props', this.props);
     return (
-      <section className="gallery-container">
+      <section className="gallery-container row mx-3 my-2">
+        <Modal show={modalActive} modalClosed={this.onCloseModal}>
+					<Lightbox user={user} photo={images.selectedPhoto}/>
+				</Modal>
         {
           images.photos.length
-            ? this.props.images.photos.map((photo: IPhoto, index: number) => {
+            ? images.photos.map((photo: IPhoto, index: number) => {
               return (<Image key={index} photo={photo} />)
             })
             : <p>...Loading</p>

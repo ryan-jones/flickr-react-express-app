@@ -1,10 +1,4 @@
-
-module.exports = {
-  formatPhotoResponse,
-  formatPhoto
-}
-
-function formatPhotoResponse(response) {
+module.exports = (response) => {
   const { page, pages, total, perpage, photo } = response.photos;
   const result = {
     page,
@@ -16,8 +10,8 @@ function formatPhotoResponse(response) {
   return result;
 }
 
-function formatPhoto(photo) {
-  const { owner, secret, server, farm, title, id } = photo;  
+const formatPhoto = (photo) => {
+  const { owner, secret, server, farm, title, id } = photo;
   const result = {
     owner,
     title,

@@ -3,11 +3,13 @@ $padding-em: 1em;
 
 $break-lg: 800px;
 $break-md: 628px;
-$break-iPad: 768;
+$break-iPad: 768px;
+$break-screen-sm-modalView: 594px;
 
 // breakpoints
 $tabletView: 'only screen and (min-width: #{$break-md}) and (max-width: #{$break-lg})';
 $mobileView: 'only screen and (max-width: #{$break-md})';
+$tabletModalView: 'only screen and (max-width: #{$break-screen-sm-modalView})';
 
 //colors
 $white: #fff;
@@ -23,3 +25,4 @@ $border-color: $base-bg-color;
 
 //Footer
 $footer-bg-color: $base-bg-color;
+

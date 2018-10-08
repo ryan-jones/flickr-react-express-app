@@ -1,8 +1,4 @@
-module.exports = {
-  formatUser
-}
-
-function formatUser(result) {
+module.exports = (result) => {
   const { realname, location, description, profileurl, username } = result.person;
   return {
       realName: realname._content,

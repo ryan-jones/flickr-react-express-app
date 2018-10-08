@@ -1,12 +1,23 @@
 export interface IGalleryState {
   images: ImagesData;
   loading: boolean;
+  user: IUser;
+  modal: {
+    modalActive: boolean;
+  }
 }
 
-export interface IGalleryStateProps extends IGalleryState { }
+export interface IGalleryStateProps {
+  images: ImagesData;
+  user: IUser;
+  loading: boolean;
+  modalActive: boolean;
+ }
 
 export interface IGalleryDispatchProps {
   fetchPhotos: any;
+  openModal: any;
+  closeModal: any
 }
 
 export interface IGalleryProps extends IGalleryStateProps, IGalleryDispatchProps { }
@@ -40,6 +51,7 @@ export interface ImagesData {
   pages: number;
   total: string;
   photos: IPhoto[];
+  selectedPhoto?: IPhoto;
 }
 
 export interface IPhotoResponse {

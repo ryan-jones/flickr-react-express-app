@@ -1,7 +1,7 @@
 const express = require('express');
-const router = express.Router();
 const userRoutes = require('./user');
 const photoRoutes = require('./photo');
+const router = express.Router();
 
 router.use('/photos', photoRoutes);
 router.use('/user', userRoutes);

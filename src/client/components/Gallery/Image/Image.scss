@@ -1,20 +1,12 @@
 @import '../../../styles/global.scss';
 
 .image-container {
-  width: 20%;
-  margin: 1em 0;
-
-  @media #{$tabletView} {
-    width: 33%;
-  }
-  @media #{$mobileView} {
-    width: 100%
-  }
 
   .photo-box {
     position: relative;
     height: 150px;
     width: 150px;
+    z-index: 300;
     box-sizing: border-box;
     border: 1px solid transparent;
     @include box-shadow(5px);
@@ -23,6 +15,7 @@
     &:hover {
       transform: scale(1.1);
       border: 2px solid $border-color;
+      transition: all 0.3s ease-out;
       @include box-shadow(10px);
     }
 
