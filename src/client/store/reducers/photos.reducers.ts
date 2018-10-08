@@ -5,6 +5,7 @@ interface IState extends ImagesData {
 }
 
 const InitialState: IState = {
+  tags: '',
   photos: [],
   perPage: 10,
   pages: 0,
@@ -22,8 +23,8 @@ const photoReducer = (state = InitialState, action: any) => {
     case actionTypes.FETCHING_PHOTOS:
       return Object.assign({}, state, { photos: [] });
     case actionTypes.PHOTOS_FETCHED:
-      const { photos, page, pages, perPage, total } = action.payload
-      return Object.assign({}, state, { photos, page, pages, perPage, total });
+      const { photos, page, pages, perPage, total, tags } = action.payload
+      return Object.assign({}, state, { photos, page, pages, perPage, total, tags });
     case actionTypes.SET_SELECTED_PHOTO:
       return Object.assign({}, state, { selectedPhoto: action.payload })
     default:

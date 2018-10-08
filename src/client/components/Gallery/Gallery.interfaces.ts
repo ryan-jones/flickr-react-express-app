@@ -46,6 +46,7 @@ export interface IPhoto {
 }
 
 export interface ImagesData {
+  tags: string;
   page: number;
   perPage: number;
   pages: number;

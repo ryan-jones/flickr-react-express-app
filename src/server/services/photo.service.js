@@ -1,6 +1,6 @@
 const checkQueryParams = (req) => {
   const perPage = req.query.perPage ? req.query.perPage : '10';
-  const page = req.query.page ? req.query.perPage : '1';
+  const page = req.query.page ? req.query.page : '1';
   return { perPage, page };
 }
 

@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
   const query = photoService.buildPhotoQueryUrl(url, tags, perPage, page);
   return axios.get(query)
     .then(response => {
-      const formattedResponse = formatPhotoResponse(response.data);
+      const formattedResponse = formatPhotoResponse(response.data, tags);
       res.send(formattedResponse);
     })
     .catch(err => res.send({ err }))
