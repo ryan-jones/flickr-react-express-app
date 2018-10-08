@@ -3,8 +3,7 @@ import { ImagesData } from '../Gallery/Gallery.interfaces';
 export interface ILayoutProps extends ILayoutStateProps {}
 
 export interface ILayoutStateProps {
-  page: number;
-  pages: number;
+  images: ImagesData;
 }
 
 export interface ILayoutDispatchProps {
@@ -12,7 +11,5 @@ export interface ILayoutDispatchProps {
 }
 
 export interface ILayoutState {
-  isDesktop?: boolean;
-  hideLayout?: boolean;
   images: ImagesData;
 }

@@ -5,7 +5,6 @@
     "timeout": "10s"
   },
   "api": {
-    "api_key": "077d1bcd65182507a0d6199a699767f9",
     "url": "https://api.flickr.com/services/rest/?method"
   }
 }

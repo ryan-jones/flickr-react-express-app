@@ -10,20 +10,17 @@ export default class Gallery extends React.Component<IGalleryProps> {
     this.props.fetchPhotos('taichung', 12, 1);
   }
 
-  public onCloseModal = () => {
-    this.props.closeModal();
-  }
+  public onCloseModal = () => this.props.closeModal();
 
   public render() {
     const { images, user, modalActive } = this.props;
-    console.log('props', this.props);
     return (
       <section className="gallery-container row mx-3 my-2">
         <Modal show={modalActive} modalClosed={this.onCloseModal}>
 					<Lightbox user={user} photo={images.selectedPhoto}/>
 				</Modal>
         {
-          images.photos.length
+          images.photos && images.photos.length
             ? images.photos.map((photo: IPhoto, index: number) => {
               return (<Image key={index} photo={photo} />)
             })

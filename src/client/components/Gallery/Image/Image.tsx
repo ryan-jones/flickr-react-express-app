@@ -10,7 +10,7 @@ export default class Image extends React.Component<ImageProps> {
     scrolledOver: false,
   }
 
-  public onMouseEnter = (photo: any) => {
+  public onMouseEnter = (photo: IPhoto) => {
     this.props.fetchUser(photo.owner);
     this.setState({ scrolledOver: true });
   }
@@ -35,9 +35,9 @@ export default class Image extends React.Component<ImageProps> {
           className='photo-box'
         >
           <img src={photo.url} />
-          {this.state.scrolledOver ? (<Overlay owner={realName}/>) : null }
+          {this.state.scrolledOver && (<Overlay owner={realName}/>) }
         </div>
-        <p>{photo.title}</p>
+        <p className="my-3">{photo.title}</p>
       </div>
     )
   }

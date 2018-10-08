@@ -1,17 +1,18 @@
 import * as React from 'react';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-export default class Layout extends React.Component<any> {
+import { ILayoutStateProps } from './Layout.interfaces';
+
+export default class Layout extends React.Component<ILayoutStateProps> {
 
   public render() {
-    const { page, pages } = this.props;
+    const { page, pages } = this.props.images;
     return (
       <div className="container-fluid p-0">
-        <Header page={page} pages={pages} />
+        <Header />
         {this.props.children}
         <Footer page={page} pages={pages} />
       </div>
-
     )
   }
 }

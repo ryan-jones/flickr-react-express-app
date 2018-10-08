@@ -7,13 +7,14 @@ export const fetchPhotos = (tags: string, perPage: number = 10, page: number = 1
   dispatch(createAction(actionTypes.FETCHING_PHOTOS));
   dispatch(createAction(actionTypes.IS_LOADING));
 
-  return axios.get(`http://localhost:8080/api/photos?tags=${tags}&perPage=${perPage}&page=${page}`)
+  const searchTerm = tags ? tags : 'Taichung';
+
+  return axios.get(`http://localhost:8080/api/photos?tags=${searchTerm}&perPage=${perPage}&page=${page}`)
     .then((res: AxiosResponse<IPhotoResponse>) => {
       dispatch(createAction(actionTypes.PHOTOS_FETCHED, res.data));
       dispatch(createAction(actionTypes.LOADED));
     })
     .catch((err: Error) => {
-      console.log('err', err);
       dispatch(createAction(actionTypes.PHOTOS_FETCH_ERROR, err.message));
       dispatch(createAction(actionTypes.LOADED));
     })

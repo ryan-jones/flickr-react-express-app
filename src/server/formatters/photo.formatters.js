@@ -1,6 +1,5 @@
 module.exports = (response, tags) => {
   const { page, pages, total, perpage, photo } = response.photos;
-  console.log('RESPONSE*********', response.photos);
   const result = {
     tags,
     page,

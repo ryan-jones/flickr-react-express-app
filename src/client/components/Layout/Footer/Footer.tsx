@@ -2,9 +2,8 @@ import * as React from 'react';
 import Paginator from './Paginator/Paginator.container';
 import PageTracker from './PageTracker/PageTracker';
 import './Footer.scss';
-import { ILayoutProps } from '../Layout.interfaces';
 
-const footer = (props: ILayoutProps) => {
+const footer = (props: { page: number, pages: number }) => {
 
   return (
     <div className="footer py-2">

@@ -1,12 +1,16 @@
 @import '../../../styles/global.scss';
 
   
-.lightbox-content {
+.lightbox {
 
+  &-content {
     .user-overview {
       i {
         color: #ccc;
       }
+    }
+    img {
+      max-height: 200px;
     }
     button {
       background: $base-bg-color;
@@ -29,3 +33,11 @@
       }
     }
   }
+
+  &-image {
+    img {
+      max-height: 300px;
+
+    }
+  }
+}

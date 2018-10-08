@@ -5,7 +5,6 @@ const pageTracker = (props: { page: number, pages: number }) => {
     <div>
       <p className="my-2">Page {props.page} of {props.pages}</p>
     </div>
-
   )
 }
 
