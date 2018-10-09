@@ -1,4 +1,4 @@
-##This is a React-Express Application that generates a photo gallery using the Flickr Api
+#This is a React-Express Application that generates a photo gallery using the Flickr Api
 
 - run *npm run build* to create a build of the react app.
 - *npm run server* will run the express application. The express app will server the react app.
