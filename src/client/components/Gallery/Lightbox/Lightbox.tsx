@@ -2,6 +2,7 @@ import * as React from 'react';
 import { IUser } from '../Gallery.interfaces';
 import './Lightbox.scss';
 import { ILightboxProps } from './Lightbox.interfaces';
+import { abbreviateString } from '../../../utils';
 
 
 
@@ -21,7 +22,7 @@ class Lightbox extends React.Component<ILightboxProps> {
 
   public render() {
     const { user } = this.props;
-    
+
     return (
       <div className="lightbox-container">
         <div className="user-name row mx-3">
@@ -35,7 +36,7 @@ class Lightbox extends React.Component<ILightboxProps> {
         <div className="lightbox-content my-3">
           <div className="user-description row">
             <div className="col-12">
-              <p><i>{user.description}</i></p>
+              <p><i>{abbreviateString(user.description, 100)}</i></p>
             </div>
           </div>
           <div className="user-overview row">
@@ -44,7 +45,13 @@ class Lightbox extends React.Component<ILightboxProps> {
           </div>
           <div className="user-profile row">
             <div className="col-12">
-              <button className="btn"><a target="_blank" href={user.profileUrl}>{user.realName}'s Profile</a></button>
+              {
+                user.profileUrl && (
+                <button className="btn">
+                  <a target="_blank" href={user.profileUrl}>{user.realName}'s Profile</a>
+                </button>
+                )
+              }
             </div>
           </div>
         </div>

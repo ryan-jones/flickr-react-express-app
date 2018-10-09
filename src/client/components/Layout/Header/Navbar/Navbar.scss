@@ -7,6 +7,7 @@ img {
   height: 50px;
 }
 
-.navbar-toggler-icon {
-  color: $white;
+
+.navbar-toggler, .navbar-toggler-icon {
+  background-color: $white !important;
 }

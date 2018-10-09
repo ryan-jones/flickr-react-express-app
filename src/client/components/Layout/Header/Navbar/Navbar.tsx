@@ -8,7 +8,7 @@ class Navbar extends React.Component<INavbarProps> {
   public state = {
     searchInput: ''
   }
-  
+
   public logo = require('src/assets/images/flickr.svg');
 
   public onChangeHandler = (event: React.SyntheticEvent) => {
@@ -29,12 +29,12 @@ class Navbar extends React.Component<INavbarProps> {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <h3 className="mx-3">Browse images for {this.state.searchInput || 'Taichung'}</h3>
+
           <form className="form-inline my-2 my-lg-0">
             <div className="input-group mx-2">
               <div className="input-group-prepend">
-                <span className="input-group-text" id="image-search">
-                  <span className="glyphicon glyphicon-search"></span>
-                </span>
+                <span className="input-group-text" id="image-search">🔎</span>
               </div>
               <DebounceInput
                 minLength={2}

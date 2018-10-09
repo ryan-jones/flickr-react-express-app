@@ -32,9 +32,9 @@ export default class Image extends React.Component<ImageProps> {
           onMouseEnter={() => this.onMouseEnter(photo)}
           onMouseLeave={this.onMouseLeave}
           onClick={() => this.onMouseClick(photo)}
-          className='photo-box'
+          className='photo-box row'
         >
-          <img src={photo.url} />
+          <img className="img-fluid" src={photo.url} />
           {this.state.scrolledOver && (<Overlay owner={realName}/>) }
         </div>
         <p className="my-3">{photo.title}</p>

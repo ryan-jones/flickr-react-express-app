@@ -17,12 +17,12 @@ $base-bg-color: #007;
 
 //Header and Nav
 $header-border-bottom: 1px solid #ddd;
-$header-bg-color: $base-bg-color;
+$header-bg-color: linear-gradient($base-bg-color, lighten($base-bg-color, 10%));
 
 // Images and Overlays
 $image-overlay-bg: rgba(0, 0, 0, .6);
 $border-color: $base-bg-color;
 
 //Footer
-$footer-bg-color: $base-bg-color;
+$footer-bg-color: linear-gradient($base-bg-color, lighten($base-bg-color, 10%));
 

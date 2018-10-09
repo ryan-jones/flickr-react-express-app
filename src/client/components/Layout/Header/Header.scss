@@ -2,7 +2,7 @@
 
 header {
   border-bottom: $header-border-bottom;
-  background-color: $header-bg-color;
+  background: $header-bg-color;
   color: $white;
-  @include box-shadow(3px);
+  @include box-shadow(5px);
 }
