@@ -1,1 +1,7 @@
 
+.gallery-container {
+  min-height: 65vh;
+  &-message {
+    margin: 10% auto;
+  }
+}

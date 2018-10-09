@@ -1,15 +1,15 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-  loading: false
+  isLoading: false
 }
 
 const loadingReducer = (state = initialState, action: any) => {
   switch(action.type) {
     case actionTypes.IS_LOADING:
-      return Object.assign({}, state, { loading: true });
+      return { isLoading: true };
     case actionTypes.LOADED:
-      return Object.assign({}, state, { loading: false })
+      return { isLoading: false };
     default:
       return state;
   }

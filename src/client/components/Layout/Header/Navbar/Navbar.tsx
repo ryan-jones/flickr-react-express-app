@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './Navbar.scss';
-import { INavbarProps } from './Navbar.container';
 import { DebounceInput } from 'react-debounce-input';
+import { INavbarProps } from './Navbar.interfaces';
 
 class Navbar extends React.Component<INavbarProps> {
 
@@ -21,7 +21,7 @@ class Navbar extends React.Component<INavbarProps> {
 
   public render() {
     return (
-      <nav className="navbar navbar-default navbar-static-top navbar-expand-md navbar-light">
+      <nav className="navbar navbar-default navbar-fixed-top navbar-expand-md navbar-light">
         <a className="navbar-brand" href="#">
           <img src={this.logo} />
         </a>
@@ -41,7 +41,7 @@ class Navbar extends React.Component<INavbarProps> {
                 debounceTimeout={300}
                 onChange={(e) => this.onChangeHandler(e)}
                 className="form-control"
-                placeholder="Search For..."
+                placeholder="Or search for..."
                 value={this.state.searchInput}
               />
             </div>

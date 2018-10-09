@@ -1,19 +1,7 @@
 import { connect } from 'react-redux';
 import Navbar from './Navbar';
 import { fetchPhotos } from '../../../../store/actions/photos.actions';
-import { ImagesData } from '../../../Gallery/Gallery.interfaces';
-
-export interface INavbarState {
-  images: ImagesData;
-}
-
-export interface INavbarStateProps extends INavbarState {}
-
-export interface INavBarDispatchProps {
-  fetchPhotos: any
-}
-
-export interface INavbarProps extends INavBarDispatchProps, INavbarStateProps {}
+import { INavbarState, INavbarStateProps, INavBarDispatchProps } from './Navbar.interfaces';
 
 const mapStateToProps = (state: INavbarState): INavbarStateProps => ({
   images: state.images,

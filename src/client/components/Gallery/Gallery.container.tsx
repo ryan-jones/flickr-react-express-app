@@ -8,7 +8,7 @@ import { activateModal, closeModal } from '../../store/actions/modal.actions';
 const mapStateToProps = (state: IGalleryState): IGalleryStateProps => ({
   images: state.images,
   user: state.user,
-  loading: state.loading,
+  loading: state.loading.isLoading,
   modalActive: state.modal.modalActive
 });
 

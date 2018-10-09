@@ -6,7 +6,7 @@ const compression = require('compression');
 const morgan = require('morgan');
 const connectTimeout = require('connect-timeout');
 const responseTime = require('response-time');
-
+const ErrorHandlers = require('./core/error');
 const { port, timeout } = config.get('server');
 
 const app = express();
@@ -26,13 +26,18 @@ app.use((req, res, next) => {
   }
   next();
 })
-
-app.use('/api', indexRouter);
-
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use('/api', indexRouter);
+
+app.use((req, res, next) => {
+	next(ErrorHandlers.errors.notFound('Unknown endpoint'));
+});
+
+// Handle All other API errors
+app.use(ErrorHandlers.errorHandler);
 
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));

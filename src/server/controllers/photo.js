@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
   return axios.get(query)
     .then(response => {
       const formattedResponse = formatPhotoResponse(response.data, tags);
-      res.send(formattedResponse);
+      res.json(formattedResponse);
     })
-    .catch(err => res.send({ err }))
+    .catch(next)
 }

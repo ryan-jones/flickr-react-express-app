@@ -2,6 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 import { ImagesData } from '../../components/Gallery/Gallery.interfaces';
 
 interface IState extends ImagesData {
+  error: string;
 }
 
 const InitialState: IState = {
@@ -15,18 +16,21 @@ const InitialState: IState = {
     owner: '',
     title: '',
     url: ''
-  }
+  },
+  error: ''
 }
 
 const photoReducer = (state = InitialState, action: any) => {
   switch(action.type) {
     case actionTypes.FETCHING_PHOTOS:
-      return Object.assign({}, state, { photos: [] });
+      return { ...state, photos: [] };
     case actionTypes.PHOTOS_FETCHED:
       const { photos, page, pages, perPage, total, tags } = action.payload
-      return Object.assign({}, state, { photos, page, pages, perPage, total, tags });
+      return { ...state, photos, page, pages, perPage, total, tags };
+    case actionTypes.PHOTOS_FETCH_ERROR:
+      return { ...state, error: action.payload }
     case actionTypes.SET_SELECTED_PHOTO:
-      return Object.assign({}, state, { selectedPhoto: action.payload })
+      return { ...state, selectedPhoto: action.payload };
     default:
       return state;
   }

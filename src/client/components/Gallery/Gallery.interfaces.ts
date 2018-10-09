@@ -1,6 +1,8 @@
 export interface IGalleryState {
   images: ImagesData;
-  loading: boolean;
+  loading: {
+    isLoading: boolean;
+  }
   user: IUser;
   modal: {
     modalActive: boolean;
@@ -53,6 +55,7 @@ export interface ImagesData {
   total: string;
   photos: IPhoto[];
   selectedPhoto?: IPhoto;
+  error: string;
 }
 
 export interface IPhotoResponse {
