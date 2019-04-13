@@ -1,56 +1,55 @@
-import * as React from 'react';
-import './Navbar.scss';
-import { DebounceInput } from 'react-debounce-input';
-import { INavbarProps } from './Navbar.interfaces';
+import * as React from "react";
+import "./Navbar.scss";
+import { DebounceInput } from "react-debounce-input";
+import { INavbarProps } from "./Navbar.interfaces";
 
-class Navbar extends React.Component<INavbarProps> {
+export default function navbar({ images, fetchPhotos }: INavbarProps) {
+  const [searchInput, setSearchInput] = React.useState("");
 
-  public state = {
-    searchInput: ''
-  }
+  const logo = require("assets/images/flickr.svg");
 
-  public logo = require('src/assets/images/flickr.svg');
+  React.useEffect(() => {
+    const { perPage } = images;
+    fetchPhotos(searchInput, perPage, 1);
+  }, [searchInput]);
 
-  public onChangeHandler = (event: React.SyntheticEvent) => {
-    const tag = (event.target as HTMLInputElement).value;
-    const { perPage } = this.props.images;
-    this.setState({ searchInput: tag });
-    this.props.fetchPhotos(tag, perPage, 1);
-  };
+  return (
+    <nav className='navbar navbar-default navbar-fixed-top navbar-expand-md navbar-light'>
+      <a className='navbar-brand' href='#'>
+        <img src={logo} />
+      </a>
+      <button
+        className='navbar-toggler'
+        type='button'
+        data-toggle='collapse'
+        data-target='#navbarSupportedContent'
+        aria-controls='navbarSupportedContent'
+        aria-expanded='false'
+        aria-label='Toggle navigation'
+      >
+        <span className='navbar-toggler-icon' />
+      </button>
+      <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+        <h3 className='mx-3'>Browse images for {searchInput || "Taichung"}</h3>
 
-
-  public render() {
-    return (
-      <nav className="navbar navbar-default navbar-fixed-top navbar-expand-md navbar-light">
-        <a className="navbar-brand" href="#">
-          <img src={this.logo} />
-        </a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <h3 className="mx-3">Browse images for {this.state.searchInput || 'Taichung'}</h3>
-
-          <form className="form-inline my-2 my-lg-0">
-            <div className="input-group mx-2">
-              <div className="input-group-prepend">
-                <span className="input-group-text" id="image-search">🔎</span>
-              </div>
-              <DebounceInput
-                minLength={2}
-                debounceTimeout={300}
-                onChange={(e) => this.onChangeHandler(e)}
-                className="form-control"
-                placeholder="Or search for..."
-                value={this.state.searchInput}
-              />
+        <form className='form-inline my-2 my-lg-0'>
+          <div className='input-group mx-2'>
+            <div className='input-group-prepend'>
+              <span className='input-group-text' id='image-search'>
+                🔎
+              </span>
             </div>
-          </form>
-        </div>
-      </nav>
-    )
-  }
+            <DebounceInput
+              minLength={2}
+              debounceTimeout={300}
+              onChange={e => setSearchInput(e.target.value)}
+              className='form-control'
+              placeholder='Or search for...'
+              value={searchInput}
+            />
+          </div>
+        </form>
+      </div>
+    </nav>
+  );
 }
-
-
-export default Navbar

@@ -1,14 +1,7 @@
 {
-  "extends": [
-    "tslint:recommended",
-    "tslint-react",
-    "tslint-config-prettier"
-  ],
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "linterOptions": {
-    "exclude": [
-      "config/**/*.js",
-      "node_modules/**/*.ts"
-    ]
+    "exclude": ["config/**/*.js", "node_modules/**/*.ts"]
   },
   "rules": {
     "no-console": false,
@@ -18,6 +11,7 @@
     "object-literal-sort-keys": false,
     "no-string-literal": false,
     "no-empty-interface": false,
-    "no-var-requires": false
+    "no-var-requires": false,
+    "interface-name": false
   }
 }

@@ -1,4 +1,4 @@
-import { ImagesData } from '../Gallery/Gallery.interfaces';
+import { ImagesData } from "../Gallery/Gallery.interfaces";
 
 export interface ILayoutProps extends ILayoutStateProps {}
 
