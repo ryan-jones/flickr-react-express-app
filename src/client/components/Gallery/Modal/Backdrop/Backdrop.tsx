@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './Backdrop.scss';
 
-interface IBackdropProps {
+export interface IBackdropProps {
   show: boolean;
   dismissed: () => void;
   children?: any;

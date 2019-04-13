@@ -18,6 +18,13 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
+    "paths": {
+      "components/*": ["src/client/components/*"],
+      "assets/*": ["src/assets/*"],
+      "store/*": ["src/client/store/*"],
+      "styles/*": ["src/client/styles/*"],
+      "utils/*": ["src/client/utils/*"]
+    }
   },
   "exclude": [
     "node_modules",
