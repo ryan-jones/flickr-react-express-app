@@ -1,11 +1,15 @@
-import * as React from 'react';
+import * as React from "react";
 
-const pageTracker = (props: { page: number, pages: number }) => {
-  return (
-    <div>
-      <p className="my-2">Page {props.page} of {props.pages}</p>
-    </div>
-  )
+interface Props {
+  page: number;
+  pages: number;
 }
+const pageTracker = ({ page, pages }: Props) => (
+  <div>
+    <p className='my-2'>
+      Page {page} of {pages}
+    </p>
+  </div>
+);
 
 export default pageTracker;
