@@ -2,11 +2,11 @@ export interface IGalleryState {
   images: ImagesData;
   loading: {
     isLoading: boolean;
-  }
+  };
   user: IUser;
   modal: {
     modalActive: boolean;
-  }
+  };
 }
 
 export interface IGalleryStateProps {
@@ -14,15 +14,16 @@ export interface IGalleryStateProps {
   user: IUser;
   loading: boolean;
   modalActive: boolean;
- }
+}
 
 export interface IGalleryDispatchProps {
   fetchPhotos: any;
-  openModal: any;
-  closeModal: any
+  closeModal: any;
 }
 
-export interface IGalleryProps extends IGalleryStateProps, IGalleryDispatchProps { }
+export interface IGalleryProps
+  extends IGalleryStateProps,
+    IGalleryDispatchProps {}
 
 export interface IUserResponse {
   config: any;
@@ -64,5 +65,5 @@ export interface IPhotoResponse {
   status: number;
   statusText: string;
   request: any;
-  data: ImagesData
+  data: ImagesData;
 }
