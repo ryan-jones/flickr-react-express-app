@@ -15,7 +15,7 @@ export default function modal({ show, children, modalClosed }: IModalProps) {
   };
   return (
     <React.Fragment>
-      <Backdrop show={show} dismissed={modalClosed} />
+      {show && <Backdrop dismissed={modalClosed} />}
       <div className='Modal' style={styles}>
         {children}
       </div>
